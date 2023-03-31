@@ -1,0 +1,44 @@
+{
+  "name": "@defx/s4",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "## Similarity to redux",
+  "main": "dist/s4.min.js",
+  "browser": "dist/s4.min.js",
+  "unpkg": "dist/s4.min.js",
+  "module": "src/index.js",
+  "files": [
+    "src",
+    "dist",
+    "cjs"
+  ],
+  "scripts": {
+    "test": "mocha-express --coverage",
+    "test:watch": "mocha-express --watch",
+    "build": "rm -rf dist && rollup -c && npm run size",
+    "size": "gzip -c9 ./dist/s4.min.js | wc -c",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm t && npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "mocha-express": "^0.1.2"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.3.0",
+    "rollup": "^3.9.1"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/defx/literally.git"
+  },
+  "bugs": {
+    "url": "https://github.com/defx/literally/issues"
+  },
+  "homepage": "https://github.com/defx/literally#readme"
+}
