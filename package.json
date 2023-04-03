@@ -1,7 +1,7 @@
 {
   "name": "@defx/s4",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "## Similarity to redux",
   "main": "dist/s4.min.js",
   "browser": "dist/s4.min.js",
