@@ -1,9 +1,9 @@
 export as namespace S4
 
 declare namespace S4 {
-  type Primitive = string | boolean | number | null | Record<string, Primitive>
+  type Primitive = string | boolean | number | null
 
-  type SerialisableObject = Record<string, Primitive>
+  type SerialisableObject = Record<string, Primitive | SerialisableObject>
 
   type Reducer = {
     /**
