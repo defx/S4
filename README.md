@@ -34,6 +34,8 @@ import {
 
 ### configure
 
+The `configure` function accepts up to two arguments, the first is your state _reducer_ function, the second optional argument is an array of _middleware_ functions.
+
 ...
 
 ### dispatch
