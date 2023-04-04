@@ -13,13 +13,13 @@
 import { configure, dispatch, subscribe, getState } from "@defx/s4"
 ```
 
-### Installation via NPM
+### Install via NPM
 
 ```sh
 npm install @defx/s4
 ```
 
-### Installation via CDN
+### Import via CDN
 
 ```js
 import {
