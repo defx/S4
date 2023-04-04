@@ -44,7 +44,8 @@ declare namespace S4 {
      */
     fn: Reducer,
     /**
-     * (optional) An array of middleware functions
+     * (optional) An array of middleware functions that will be invoked immediately after an action is dispatched and before it is passed to the reducer.
+     * Unlike redux, the current design does not pass any continuation function (i.e., "next()"), the functions are all simply invoked with no way to delay or cancel the current action, however, by use of the provided getState and dispatch methods they may dispatch their own actions at a later time, such as after the completion of some asynchronous work
      */
     middleware?: Middleware[]
   ): void
