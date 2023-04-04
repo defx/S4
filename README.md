@@ -40,10 +40,10 @@ import {
 
 ...
 
-#### subscribe
+### subscribe
 
 ...
 
-#### getState
+### getState
 
 ...
