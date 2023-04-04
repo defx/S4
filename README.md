@@ -34,18 +34,61 @@ import {
 
 ### configure
 
-The `configure` function accepts up to two arguments, the first is your state _reducer_ function, the second optional argument is an array of _middleware_ functions.
-
-...
+```ts
+function configure(
+  /**
+   * The reducer function will handle each action that is dispatched and return the new state
+   */
+  fn: Reducer,
+  /**
+   * (optional) An array of middleware functions that will be invoked immediately after an action is dispatched and before it is passed to the reducer.
+   */
+  middleware?: Middleware[]
+): void
+```
 
 ### dispatch
 
-...
+```ts
+function dispatch(
+  /**
+   * The name of the action
+   */
+  type: string,
+  /**
+   * An object containing any values required to update state
+   */
+  payload: SerialisableObject
+)
+```
 
 ### subscribe
+
+```ts
+function subscribe(
+  /**
+   * The subscription callback will be invoked with the current state whenever the state has changed
+   */
+  fn: SubscriptionCallback
+)
+```
 
 ...
 
 ### getState
 
-...
+```ts
+/**
+ * Returns a copy of the current state
+ */
+function getState(): SerialisableObject
+```
+
+### ready
+
+```ts
+/**
+ * A Promise that will resolve once the store is configured
+ */
+ready: Promise<void>
+```

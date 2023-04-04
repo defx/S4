@@ -13,9 +13,6 @@ declare namespace S4 {
   }
 
   type SubscriptionCallback = {
-    /**
-     * The subscription callback is a function that will be invoked with the current state whenever the state has changed
-     */
     (state: SerialisableObject): void
   }
 
@@ -30,9 +27,17 @@ declare namespace S4 {
     payload: SerialisableObject
   )
 
+  /**
+   * Returns a copy of the current state
+   */
   function getState(): SerialisableObject
 
-  function subscribe(fn: SubscriptionCallback)
+  function subscribe(
+    /**
+     * The subscription callback will be invoked with the current state whenever the state has changed
+     */
+    fn: SubscriptionCallback
+  )
 
   type Middleware = {
     (type: string, payload: SerialisableObject, { getState, dispatch }): void
