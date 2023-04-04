@@ -1,8 +1,10 @@
 const subscribers = new Set()
 
 let state = {}
-let reducer = (state, type, payload) => payload
+let reducer = () => ({})
 let middleware = []
+let resolveAsReady
+export let ready = new Promise((resolve) => (resolveAsReady = resolve))
 
 export function getState() {
   return { ...state }
@@ -31,6 +33,8 @@ export function subscribe(fn) {
 export function configure(r, m = []) {
   reducer = r
   middleware = m
+  state = reducer()
+  resolveAsReady()
 }
 
 const update = debounce(function publish() {
